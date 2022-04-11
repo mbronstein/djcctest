@@ -12,7 +12,7 @@ keepalive = 2
 spew = False
 daemon = False
 
-raw_env = ["DJANGO_SETTINGS_FILE=config.settings.production",]
+# raw_env = ["DJANGO_SETTINGS_FILE=config.settings.production",]
 
 
 # pidfile = None
