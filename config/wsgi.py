@@ -28,7 +28,7 @@ sys.path.append(str(ROOT_DIR / "djcctest" / "venv" / "bin" ))
 
 # preparing environment for django settings files
 os.environ["DJANGO_SETTINGS_MODULE"] = "config.settings.production"
-os.environ["READ_DOT_ENV_FILE"] = True
+os.environ["READ_DOT_ENV_FILE"] = "True"
 
 
 
