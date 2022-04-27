@@ -19,16 +19,18 @@ from pathlib import Path
 
 from django.core.wsgi import get_wsgi_application
 
-# This allows easy placement of apps within the interior
-# djcctest directory.
+# This allows easy placement of apps within the interior djcctest directory.
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent
+
+#following added by MB bexcause of path issues on linux server. may be unnecessary
 sys.path.append(str(ROOT_DIR / "djcctest"))
 sys.path.append(str(ROOT_DIR / "djcctest" / "venv" / "bin" ))
-# We defer to a DJANGO_SETTINGS_MODULE already in the environment. This breaks
-# if running multiple sites in the same mod_wsgi process. To fix this, use
-# mod_wsgi daemon mode with each site in its own daemon process, or use
-# os.environ["DJANGO_SETTINGS_MODULE"] = "config.settings.production"
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.production")
+
+# preparing environment for django settings files
+os.environ["DJANGO_SETTINGS_MODULE"] = "config.settings.production"
+os.environ["READ_DOT_ENV_FILE"] = True
+
+
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
