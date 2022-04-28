@@ -2,11 +2,16 @@
 
 -r base.txt
 
-gunicorn==20.1.0  # https://github.com/benoitc/gunicorn
-psycopg2==2.9.3  # https://github.com/psycopg/psycopg2
-hiredis==2.0.0  # https://github.com/redis/hiredis-py
+gunicorn  # https://github.com/benoitc/gunicorn
+psycopg2-binary  # https://github.com/psycopg/psycopg2
+hiredis  # https://github.com/redis/hiredis-py
 
 # Django
 # ------------------------------------------------------------------------------
 django-storages[boto3]==1.12.3  # https://github.com/jschneier/django-storages
 django-anymail[mailgun]==8.5  # https://github.com/anymail/django-anymail
+
+#enable testing on production server. Is this a bad idea?
+
+pytest==7.1.1  # https://github.com/pytest-dev/pytest
+pytest-sugar==0.9.4  # https://github.com/Frozenball/pytest-sugar
